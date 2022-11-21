@@ -27,6 +27,8 @@ const cards = [
 
 const memoryGame = new MemoryGame(cards);
 
+
+
 window.addEventListener("load", (event) => {
   let html = "";
   memoryGame.cards.forEach((pic) => {
@@ -74,7 +76,8 @@ window.addEventListener("load", (event) => {
         "pairs-guessed"
       ).innerHTML = `${memoryGame.pairsGuessed}`;
       if (memoryGame.checkIfFinished()) {
-        alert(`You won in ${memoryGame.pairsClicked} moves!`);
+        let winHtml = `<div style = "position:relative; text-align:center; margin:auto; width:50%; background-color:rgba(215, 44, 44, 0.8); padding:50px">You won in ${memoryGame.pairsClicked} moves!</div>`
+        document.getElementById('memory-board').innerHTML = winHtml;
       }
     });
   });
