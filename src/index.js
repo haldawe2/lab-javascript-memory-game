@@ -67,8 +67,14 @@ window.addEventListener("load", (event) => {
         }
       }
       console.log(`Card clicked: ${card.getAttribute("data-card-name")}`);
+      document.getElementById(
+        "pairs-clicked"
+      ).innerHTML = `${memoryGame.pairsClicked}`;
+      document.getElementById(
+        "pairs-guessed"
+      ).innerHTML = `${memoryGame.pairsGuessed}`;
       if (memoryGame.checkIfFinished()) {
-        console.log(`You won in ${memoryGame.pairsClicked} moves!`);
+        alert(`You won in ${memoryGame.pairsClicked} moves!`);
       }
     });
   });
